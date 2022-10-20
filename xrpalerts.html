@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div class="container"></div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XRP Alerts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css">
+
+
+
+
+
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style type="text/css">
+
+
+
+        
+    html, body {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 100px;
+        margin: 0;
+        min-height: 180px;
+        padding: 0;
+        width: 0 auto;
+        text-align: center;
+        background: #333333;
+    }
+
+    
+
+    
+    h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        font-weight: 400;
+        margin: 0 auto;
+        color: #004d99;
+    }
+
+
+    a:link, a:visited {
+        color: #dadada;
+        outline: 0;
+        text-decoration: none;
+    }
+
+    img {
+        width: 0 auto;
+    }
+
+    .modal-headerog {
+        align-items: center;
+        font-size: 100px;
+        margin-left: 130px;
+
+    }
+
+    .modal-header2og {
+        align-items: center;
+        border-bottom: 0.5px solid #0d0d0d;
+        font-size: 100px;
+        margin-left: 130px;
+
+    }
+
+
+    .modal-contentog {
+        padding: 0 auto;
+        color: #999999;
+        font-size: 25px;
+        border-bottom: 0.5px solid #0d0d0d;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin-left: 130px;
+    }
+
+    .modal-icons {
+        border-top: 0.5px solid #dadada;
+        height: 50px;
+        width: 100%
+    }
+
+    .logo {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .logo-icon {
+        vertical-align: text-bottom;
+        margin-right: 12px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        float: left;
+    }
+
+    .versionog {
+        color: #444;
+        font-size: 30px;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 22px;
+        text-align: center
+    }
+
+    .flex {
+        opacity: 1;
+        transform: opacity 0.2s ease-in-out;
+        width: 120px;
+    }
+
+    .flex-hover {
+        opacity: 0.4;
+    }
+
+    .flex .fa {
+        font-size: 100px;
+        color: rgb(10, 65, 216);
+    }
+
+    .data {
+        width: 0 auto;
+        border: 1px dashed #dadada;
+        font-size: 20px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 0 auto;
+        padding: 5px;
+    }
+
+    .results {
+      color: #dadada;
+      text-align: center;
+      font-size: 18px;
+
+    }
+
+    .resultsbig {
+      color: #0091ff;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    .priceup {
+      color: #00ff15;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    .pricedown {
+      color: #ff0000;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    .resultsmed {
+      color: #dadada;
+      text-align: center;
+      font-size: 23px;
+    }
+
+    .titleog {
+      color: #0091ff;
+      text-align: center;
+      font-size: 30px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .titlecard {
+      color: #0091ff;
+      text-align: center;
+      font-size: 22px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .resultsbasic {
+      color: #dadada;
+      text-align: center;
+    }
+
+    .button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #0091ff;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+    width: 280px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+
+
+.button:hover span {
+  padding-right: 25px;
+  background-color: #0091ff
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button:active {
+  background-color: #0076d1;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  outline: none;
+}
+
+.button:active span {
+  background-color: #0076d1;
+}
+
+
+button:focus{
+    outline: none;
+}
+
+
+
+
+    </style>
+
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAACE1BMVEUAAAAIgLcHfLMDaZ8IgbgIgbgIgrkPotoIgrkLkskDaZ8Fc6kGdasEb6YDaZ8KdKsLj8YPotoIgrkIgrkIgbgIgbgIgLYHfLMDaZ8HfbQHerAFdawEcKYDa6ECZ54IgrkIfrUCZpwCY5kIgrkIf7YCZpwBY5kIgrkIf7YCZpwBYpgQpt4PoNcOnNQNmM8MlMsIdasIgrkIf7YCZpwBY5kc//8QpNwPodgOnNQNl88Mk8oLj8YLisIIfrUDa6ECZ50BYpgRqOAQpd0LjsUKisEJg7oIfrUHerEGdawEcKYDa6IDaJ4RqeEQpt4KicAJhLsHe7IGdq0AAAARqeEQpt4LjsUKicAJhLsHe7IGdq0EbaQRqOAQpd0LjsUKisIJgrkIf7UHerEGdawEcKYDa6IDaJ4QpNwPodgOnNQNl88Mk8oLj8cJg7oIfrUDa6ECZ50BYpgQp98PoNcOnNMNmM8MlMsEXJIIgrkIf7YCZpwBY5kIgrkIf7YCZpwBYpgIgrkIf7YCZpwBY5kIgrkIfrUCZpwCY5kHfbQHebAFdawEcKYDa6ECZ54HerEGdawEcKYDa6EHerEGdawEcKYDa6EHerEDa6EHerEDa6EHerEEcKYPodkOnNQNl88MksoPodkMksoLjsUIf7YPodkIf7YMksoHerEEcKYHerEDa6EHerEDa6EHerEGdawEcKYDa6EAAABXSZMQAAAAjXRSTlMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIan2+LYsCqa4FTnw91lL+v1xASdcWCAAJd/uRABY3/7900QBn/qMBy3c1zwiu/q9m1wMafzq4a4MAGj8/+Herw4BK9nQLiXM+8OjYw5T2v380UMGsfuRCAEiVVEcACzm70ZM+v1xOPD2VwmitBQeovT3sChSeyVGAAAAAWJLR0QAiAUdSAAAAAlwSFlzAAAOLAAADiwB+ZvuEAAAAAd0SU1FB+MLFw0GAyGR+NQAAADqSURBVBjTY2CAAEYmSSlpGVk5ZiifgUVeobevf4KiEkyAVVll4qTJU1TVYAJs6hpTJ02epqnFwK6to6unb8BhaDR90uQZxiYMpmbmFpZW1pw2tjMnzbKzd2BwdJo9Z+48ZxdXN3cPTy9vLgYf3/lz5i5Y6Oe/KCAwiBtoWnDIYqBAaFj4kojIKB5eBoboGKCWpbFx8QmJSckpqXwM/GnpGZlZ2QI5ucsmLc/LL2AQLCwqLiktEyqvWDFp8srKKpjDhKtrVgEdVlsHExCpbwA6fXVjE0xAtLllzdp161vbYAJi4u0dnV3dPRIA+5VJE/K1JdwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTEtMjNUMTM6MDY6MDMtMDU6MDBm13ZpAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTExLTIzVDEzOjA2OjAzLTA1OjAwF4rO1QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII=" type="image/x-icon" />
+
+</head>
+
+
+<div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px">
+  <h5 class="w3-bar-item" style="color: #0091ff;"><strong>XRP Menu</strong></h5>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Intro')">Intro to XRP</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Price')">XRP Price Graph</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'XRPConverter')"> XRP to USD Converter</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'USDConverter')">USD to XRP Converter</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Profit')">Profit</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'If...')">If 1 XRP Were...</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'News')">XRP News</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Store')">XRP Store</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Donate')">Donate</button>
+</div>
+
+
+<body>
+    <div class="modal-headerog">
+        <h1 class="logo">
+            <img src="https://i.imgur.com/JzhQOKW.png"/>
+        </h1>
+        <div class="titleog">
+                XRP Alerts <a href="https://docs.google.com/document/d/1vmhJ4nECQKE_0rZMLvZaJRgSNLfQOmlKrHzsoICFfzs/edit?usp=sharing" span class="versionog" style="color: #444;">(1.3.1)</span></a>
+                  
+             </div>
+    </div>
+  </div>
+    <div class="modal-contentog">
+        <p>See how much your XRP is worth, get the latest updates on Ripple News, shop for XRP merch, and much more.</p>
+  
+    </div>
+  </div>
+    <div class="modal-header2og">
+      <div class="titleog">
+                <p id="Price1" class="resultsbig"></p>
+                <p id="date1" class="resultsmed"></p>
+           </div>
+          </div>
+    <div class="flex-container"></div>
+    <div class="flex"></div>
+    <a href="https://www.coingecko.com/en/coins/ripple/usd" target="_blank">
+</a>
+<div class="flex"></div>
+    <a href="https://www.coingecko.com/en/coins/ripple/usd" target="_blank">
+</a>
+
+<br>
+<br>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-7322942476225248",
+          enable_page_level_ads: true
+     });
+</script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+
+
+<div style="margin-left:130px">
+<script>
+     
+  const api_url1 = "https://api.cryptonator.com/api/ticker/xrp-usd"
+
+  function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+ async function XRPtoUSD() {
+     const response1 = await fetch(api_url1);
+    const data1 = await response1.json();                         
+    var XRPprice1 = (JSON.parse(data1.ticker.price));
+    var XRPdate1 = (JSON.parse(data1.timestamp));
+   
+
+
+
+
+
+  var d = new Date(XRPdate1*1000);
+  var x = document.getElementById("date1");
+  var h = addZero(d.getHours());
+  var m = addZero(d.getMinutes());
+  var ampm = h >= 12 ? 'PM' : 'AM';
+
+
+  if (h > 12) {
+  h = h-12;
+}
+  x.innerHTML = "*accurate as of " + h + ":" + m + " " + ampm;
+
+
+
+
+
+    console.log("1 XRP is ", XRPprice1, "USD. Thanks for peeking into my console!");
+      document.getElementById("Price1").innerHTML = ("1 XRP is " + XRPprice1 +  " USD." );
+
+
+
+  }
+
+
+  setInterval("paprika();",5000); 
+    function paprika(){
+      $('#refresh').load(location.href + ' #time');
+    }
+
+
+</script>
+
+
+<div id="Intro" class="w3-container city w3-animate-bottom" style="display:none">
+  <h2 class="titleog">Intro to XRP</h2>
+  <p id="IntroDes" class="results">Understand what XRP is all about.</p>
+  <br>
+  
+
+  <p class="results"><strong>A perfect introduction for beginners on what XRP is and what it hopes to achieve, made by one of the creators of XRP himself.</strong></p>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/twqWyYrDObc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
+  <p class="results"><strong>A fast-paced video that goes through all the reasons why XRP is the best cryptocurrency in just 2 minutes.</strong></p>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/fT0Y1Pf_NNM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <br>
+  <br>
+  <p class="results"><strong>A much more in-depth introduction to XRP, great for people who already know the basics on XRP.</strong></p>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/BapSPTkORn4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+ 
+    </div>
+
+
+
+
+  <div id="Price" class="w3-container city w3-animate-bottom" style="display:none">
+    <h2 class="titleog">XRP Price Graph</h2>
+    <p id="PriceDes" class="results">See the live XRP/USD price, with a graph to see previous prices.</p>
+  
+
+
+    <br>
+
+
+    <script type="text/javascript" src="https://unpkg.com/@coinpaprika/widget-currency/dist/widget.min.js"></script><div class="coinpaprika-currency-widget cp-widget__night-mode" data-primary-currency="usd" data-currency="xrp-xrp" data-modules='["chart"]' data-update-active="true" data-update-timeout="1m"></div>
+
+      </div>
+
+
+    <div id="XRPConverter" class="w3-container city w3-animate-bottom" style="display:none">
+        <h2 class="titleog">XRP to USD Converter</h2>
+        <p class="results">Convert XRP to USD, with a rate updating live every minute.</p>
+        <input type="text" name="XRPinput" id="XRPinput" class="stored" value="" placeholder="XRP Amount" onkeyup='saveValue(this);'/>
+        <br>
+        <br>
+        
+
+        <button class="button" style="vertical-align:middle" onclick="refreshXRPtoUSD()" id = "button1"><span><strong>Click to convert</strong></span></button>
+
+
+
+
+        <p id="output1" class="results"></p>   
+
+       
+        <script>
+        
+
+        var XRP = document.getElementById("XRPinput").value;
+     
+        const api_url = "https://api.cryptonator.com/api/ticker/xrp-usd"
+       async function clickXRPtoUSD() {
+          const response = await fetch(api_url);
+          const data = await response.json();                         
+          var XRPprice = (JSON.parse(data.ticker.price));
+          console.log("1 XRP is ", XRPprice, "USD. Thanks for peeking into my console!");
+            var XRP = document.getElementById("XRPinput").value   
+            var XRPP = parseFloat(XRP);
+            var XRPtoUSD = (XRPP*XRPprice);
+            var XRPround = XRPtoUSD.toFixed(2);
+            document.getElementById("output1").innerHTML = (XRPP + " XRP is " + XRPround +  " USD." );
+            document.getElementById("XRPrate").innerHTML = ("1 USD = " + XRPprice + " XRP." );
+        }
+        
+
+        
+        </script>
+
+
+
+</script>
+      </div>
+
+  <div id="USDConverter" class="w3-container city w3-animate-bottom" style="display:none">
+
+<h2 class="titleog">USD to XRP Converter</h2>
+<p class="results">Convert USD to XRP, with a rate updating live every minute.</p>
+<input id="USDinput" name="USDinput" placeholder="USD Amount" onkeyup='saveValue(this);'>
+<br>
+<br>
+
+<button class="button" style="vertical-align:middle" onclick="refreshUSDtoXRP()" id = "button2"><span><strong>Click to convert</strong></span></button>
+
+<p id="output2" class="results"></p>   
+
+
+<script>
+
+
+var XRP = document.getElementById("USDinput").value;
+
+async function clickUSDtoXRP() {
+     const response = await fetch(api_url);
+  const data = await response.json();
+                        
+                        
+  var USDprice = (JSON.parse(data.ticker.price));
+  console.log("1 XRP is ", USDprice, ". Thanks for peeking into my console!");
+    var USD = document.getElementById("USDinput").value;
+    var USDP = parseFloat(USD);
+    var USDtoXRP = (USDP/USDprice);
+    var USDround = USDtoXRP.toFixed(2);
+    document.getElementById("output2").innerHTML = (USDP + " USD is " + USDround + " XRP.");
+}
+
+
+</script>
+
+  </div>
+
+
+  
+
+
+  <div id="Profit" class="w3-container city w3-animate-bottom" style="display:none">
+
+
+
+    <h2 class="titleog">Profit</h2>
+    <p class="results">See how much your shares are valued at since you purchased them, and how much you have made.</p>
+
+  <br>
+
+    <p class="resultsbasic">How many XRP did you buy?</p>
+    
+
+
+    <input id="profitXRPinput" name="profitXRPinput" placeholder="XRP Amount" onkeyup='saveValue(this);'>
+    <br>
+    <br>
+    <p class="resultsbasic">What was the average price per XRP that you bought it at (in USD)?</p>
+    
+    <input id="averageXRPinput" name="averageXRPinput" placeholder="Average Price Per XRP" onkeyup='saveValue(this);'>
+    <br>
+    <br>
+  
+    <button class="button" style="vertical-align:middle" onclick="refreshProfit()" id = "profitXRPbutton"><span><strong>Click to convert</strong></span></button>
+
+    <p id="profitXRPoutput" class="results"></p>   
+
+   
+    <script>
+    
+    
+    var XRP = document.getElementById("profitXRPinput").value;
+ 
+   async function clickProfit() {
+      const response = await fetch(api_url);
+      const data = await response.json();
+                            
+                            
+      var profitXRPprice = (JSON.parse(data.ticker.price));
+      console.log("1 XRP is ", profitXRPprice, "USD. Thanks for taking a peek at the console!");
+        var profitXRP = document.getElementById("profitXRPinput").value;
+        var profitXRPP = parseFloat(profitXRP);
+        var profitXRPtoUSD = (profitXRPP*profitXRPprice);
+        var profitXRPround = profitXRPtoUSD.toFixed(2);
+        var averageXRP = document.getElementById("averageXRPinput").value;
+        var averageXRPP = parseFloat(averageXRP);
+        var averageXRPtoUSD = (profitXRPP*averageXRPP)
+        var averageXRPtoUSDround = averageXRPtoUSD.toFixed(2);
+        var changeinXRP = (profitXRPtoUSD - averageXRPtoUSD);
+        var changeinXRPround = changeinXRP.toFixed(2);
+        var changeinXRProundlost = (changeinXRPround*-1);
+        var Percent1 = (profitXRPprice/averageXRPP);
+        var Percent2 = (Percent1-1);
+        var PercentFinal = Percent2*100;
+        var PercentFinalround = PercentFinal.toFixed(1);
+        var PercentFinalroundlost = (PercentFinalround*-1);
+
+        if (changeinXRPround > -0.01) {
+            document.getElementById("profitXRPoutput").innerHTML = ("Your XRP is worth $" + profitXRPround + ". You have made $" + changeinXRPround + " from your initial investment of $" + averageXRPtoUSDround + ", and your XRP has gone up by " + PercentFinalround + "%.");
+  } else {
+    console.log(changeinXRProundlost);
+    document.getElementById("profitXRPoutput").innerHTML = ("Your XRP is worth $" + profitXRPround + ". You have lost $" + changeinXRProundlost + " from your initial investment of $" + averageXRPtoUSDround + ", and your XRP has gone down by " + PercentFinalroundlost + "%.");
+  }
+
+    }
+    
+
+
+    
+    
+    </script>
+   
+  </div>
+
+
+  <div id="If..." class="w3-container city w3-animate-bottom" style="display:none">
+
+
+
+    <h2 class="titleog">If 1 XRP Were...</h2>
+    <p class="results">See how much your shares would be valued at if XRP reached a certain price.</p>
+
+  <br>
+
+    <p class="resultsbasic">How many XRP did you buy?</p>
+    
+
+
+    <input id="ifXRPinput" name="ifXRPinput" placeholder="XRP Amount" onkeyup='saveValue(this);'>
+    <br>
+    <br>
+    <p class="resultsbasic">What was the average price per XRP that you bought it at (in USD)?</p>
+  
+    <input id="ifaverageXRPinput" name="ifaverageXRPinput" placeholder="Average Price Per XRP" onkeyup='saveValue(this);'>
+    <br>
+    <br>
+    <p class="resultsbasic">What price do you think XRP will be in the future (in USD)?</p>
+
+    <input id="ifXRPpricewas" name="ifXRPpricewas" placeholder="XRP Future Price" onkeyup='saveValue(this);'>
+<br>
+    <br>
+  
+    <button class="button" style="vertical-align:middle" onclick="refreshIf()" id = "ifXRPbutton"><span><strong>Click to convert</strong></span></button>
+
+    <p id="ifXRPoutput" class="results"></p>   
+
+   
+    <script>
+    
+    
+    var ifXRP = document.getElementById("ifXRPinput").value;
+ 
+   async function clickIf() {
+      const response = await fetch(api_url);
+      const data = await response.json();
+                            
+                            
+      var ifXRPprice = (JSON.parse(data.ticker.price));
+      console.log("1 XRP is ", ifXRPprice, "USD. Thanks for taking a peek at the console!");
+        var ifXRP = document.getElementById("ifXRPinput").value;
+        var ifXRPP = parseFloat(ifXRP);
+        var ifXRPtoUSD = (ifXRPP*ifXRPprice);
+        var ifXRPround = ifXRPtoUSD.toFixed(2);
+        var ifaverageXRP = document.getElementById("ifaverageXRPinput").value;
+        var ifaverageXRPP = parseFloat(ifaverageXRP);
+        var ifaverageXRPtoUSD = (ifXRPP*ifaverageXRPP)
+        var ifaverageXRPtoUSDround = ifaverageXRPtoUSD.toFixed(2);
+        var ifchangeinXRP = (ifXRPtoUSD - ifaverageXRPtoUSD);
+        var ifchangeinXRPround = ifchangeinXRP.toFixed(2);
+        var ifchangeinXRProundlost = (ifchangeinXRPround*-1);
+        var ifXRPpricewas = document.getElementById("ifXRPpricewas").value;
+        var ifXRPPpricewas = parseFloat(ifXRPpricewas);
+        var ifXRPPpricewasround = ifXRPPpricewas.toFixed(2);
+        var iftotal = (ifXRPPpricewas * ifXRPP);
+        var iftotalD = iftotal.toFixed(2);
+        var actualprice = (ifXRPP * ifaverageXRPP);
+        var ifProfit = (iftotal - actualprice);
+        var ifProfitD = ifProfit.toFixed(2);
+        var ifProfitDlost = (ifProfitD*-1);
+        var ifInitialInvestment = (iftotalD - ifProfitD);
+        var ifInitialInvestmentround = ifInitialInvestment.toFixed(2);
+        var ifPercent1 = (ifXRPPpricewas/ifaverageXRPP);
+        var ifPercent2 = (ifPercent1-1);
+        var ifPercentFinal = ifPercent2*100;
+        var ifPercentFinalround = ifPercentFinal.toFixed(1);
+        var ifPercentFinalroundlost = (ifPercentFinalround*-1);
+
+
+
+
+        if (ifProfit > -0.01) {
+            document.getElementById("ifXRPoutput").innerHTML = ("ifXRPoutput").innerHTML = ("If 1 XRP were worth " + ifXRPPpricewas + " USD, you would have made $" + ifProfitD + " off of your initial investment of $" + ifInitialInvestmentround + ". Your XRP would have gone up by " + ifPercentFinalround + "%.");
+  } else {
+    document.getElementById("ifXRPoutput").innerHTML = ("If 1 XRP were worth " + ifXRPPpricewas + " USD, you would have lost $" + ifProfitDlost + " off of your initial investment of $" + ifInitialInvestmentround + ". Your XRP would have gone down by " + ifPercentFinalroundlost + "%.");
+  }
+
+    }
+    
+
+
+    
+    
+    </script>
+   
+  </div>
+
+
+
+
+  <div id="News" class="w3-container city w3-animate-bottom" style="display:none">
+    <h2 class="titleog">XRP News</h2>
+    <p class="results">All of the trending XRP and Ripple News.</p> 
+
+    <iframe width="100%" scrolling="yes" allowtransparency="true" frameborder="0" src="https://cryptopanic.com/widgets/news/?bg_color=1E1C1C&amp;currencies=XRP&amp;font_family=mono&amp;header_bg_color=30343B&amp;header_text_color=FFFFFF&amp;link_color=0091C2&amp;news_feed=trending&amp;posts_limit=5&amp;text_color=3F6873&amp;title=Trending%20Ripple%20News" height="350px"></iframe>
+
+   
+  </div>
+
+
+
+
+
+  <div id="Store" class="w3-container city w3-animate-bottom" style="display:none">
+    <h2 class="titleog">XRP Store</h2>
+    <p class="results">Only the best Ripple and XRP merch.</p> 
+
+
+
+
+    <div class="card-deck">
+        <div class="card bg-dark text-white">
+            <a href="https://www.etsy.com/search?q=xrp%20hoodie" target="_blank">
+          
+          
+           
+          <img src="https://i.imgur.com/PrfZYau.jpg?1" class="card-img-top" alt="XRP Hoodie">
+        
+          <div class="card-body">
+            <h5 class="titlecard"><strong>XRP Hoodies</strong></h5>
+          </a>
+          </div>
+        
+          <div class="card-footer">
+              <a href="https://www.etsy.com/search?q=xrp%20hoodie" target="_blank" class="btn btn-primary">Buy!</a>          </div>
+        </div>
+        <div class="card bg-dark text-white">
+            <a href="https://www.etsy.com/search?q=xrp+phone+case&spelling_correction_show_original=xr+phone" target="_blank">
+          <img src="https://i.imgur.com/yoKtXig.jpg" class="card-img-top" alt="XRP Phone Case">
+          <div class="card-body">
+            <h5 class="titlecard"><strong>XRP Phone Cases</strong></h5>
+          </a>
+          </div>
+          <div class="card-footer">
+              <a href="https://www.etsy.com/search?q=xrp+phone+case&spelling_correction_show_original=xr+phone" target="_blank" class="btn btn-primary">Buy!</a>
+            </div>
+        </div>
+        <div class="card bg-dark text-white">
+            <a href="https://www.etsy.com/search?q=xrp%20shoe" target="_blank">
+
+          <img src="https://i.imgur.com/2cywAim.jpg" class="card-img-top" alt="XRP Shoes">
+            
+          <div class="card-body">
+            <h5 class="titlecard"><strong>XRP Shoes</strong></h5>
+          </a>
+          </div>
+          <div class="card-footer">
+              <a href="https://www.etsy.com/search?q=xrp%20shoe" target="_blank" class="btn btn-primary">Buy!</a>
+            </div>
+        </div>
+        <div class="card bg-dark text-white">
+            <a href="https://www.etsy.com/search?q=xrp%20socks" target="_blank">
+
+            <img src="https://i.imgur.com/l40zzsq.jpg?1" class="card-img-top" alt="XRP Socks">
+          
+            <div class="card-body">
+              <h5 class="titlecard"><strong>XRP Socks</strong></h5>
+            </a>
+            </div>
+            <div class="card-footer">
+                <a href="https://www.etsy.com/search?q=xrp+socks" target="_blank" class="btn btn-primary">Buy!</a>
+              </div>
+          </div>
+      </div>
+    
+
+
+
+
+
+
+    <br>
+
+
+
+
+    <div class="card-deck">
+        <div class="card bg-dark text-white">
+
+            <a href="https://www.etsy.com/search?q=xrp%20slippers" target="_blank">
+          <img src="https://i.imgur.com/QNImMlJ.jpg?1" class="card-img-top" alt="XRP Slipper">
+          <div class="card-body">
+            <h5 class="titlecard"><strong>XRP Slippers</strong></h5>
+          </a>
+          </div>
+</a>
+          <div class="card-footer">
+              <a href="https://www.etsy.com/search?q=xrp%20slippers" target="_blank" class="btn btn-primary">Buy!</a>          </div>
+        </div>
+        <div class="card bg-dark text-white">
+            <a href="https://www.etsy.com/search?q=xrp%20physical%20coin" target="_blank">
+
+          <img src="https://i.imgur.com/EV531HL.jpg?1" class="card-img-top" alt="XRP Physical Coin">
+          <div class="card-body">
+            <h5 class="titlecard"><strong>XRP Physical Coins</strong></h5>
+            </a>
+          </div>
+          <div class="card-footer">
+              <a href="https://www.etsy.com/search?q=xrp%20physical%20coin" target="_blank" class="btn btn-primary">Buy!</a>
+            </div>
+        </div>
+        <div class="card bg-dark text-white">
+            <a href="https://www.etsy.com/search?q=xrp%20cap" target="_blank">
+
+          <img src="https://i.imgur.com/ZvmcfMK.jpg?1" class="card-img-top" alt="XRP Cap">
+          <div class="card-body">
+            <h5 class="titlecard"><strong>XRP Caps</strong></h5>
+</a>
+          </div>
+          <div class="card-footer">
+              <a href="https://www.etsy.com/search?q=xrp%20cap" target="_blank" class="btn btn-primary">Buy!</a>
+            </div>
+        </div>
+        <div class="card bg-dark text-white">
+            <a href="https://www.etsy.com/search?q=xrp%20mug" target="_blank">
+
+            <img src="https://i.imgur.com/NZ0nRYr.jpg?1" class="card-img-top" alt="XRP Mug">
+            <div class="card-body">
+              <h5 class="titlecard"><strong>XRP Mugs</strong></h5>
+              </a>
+            </div>
+            <div class="card-footer">
+                <a href="https://www.etsy.com/search?q=xrp%20mug" target="_blank" class="btn btn-primary">Buy!</a>
+              </div>
+          </div>
+      </div>
+
+
+
+
+<br>
+
+
+
+
+
+<div class="card-deck">
+    <div class="card bg-dark text-white">
+        <a href="https://www.etsy.com/search?q=xrp%20ring" target="_blank">
+
+      <img src="https://i.imgur.com/sAQQEvE.jpg" class="card-img-top" alt="XRP Ring">
+      <div class="card-body">
+        <h5 class="titlecard"><strong>XRP Rings</strong></h5>
+        </a>
+      </div>
+      <div class="card-footer">
+          <a href="https://www.etsy.com/search?q=xrp%20ring" target="_blank" class="btn btn-primary">Buy!</a>          </div>
+    </div>
+    <div class="card bg-dark text-white">
+        <a href="https://www.etsy.com/search?q=xrp%20beanie" target="_blank">
+
+      <img src="https://i.imgur.com/WduLzk4.jpg" class="card-img-top" alt="XRP Beanie">
+      <div class="card-body">
+        <h5 class="titlecard"><strong>XRP Beanies</strong></h5>
+        </a>
+      </div>
+      <div class="card-footer">
+          <a href="https://www.etsy.com/search?q=xrp%20beanie" target="_blank" class="btn btn-primary">Buy!</a>
+        </div>
+    </div>
+    <div class="card bg-dark text-white">
+        <a href="https://www.etsy.com/search?q=xrp%20sticker" target="_blank">
+
+      <img src="https://i.imgur.com/9NJtqCx.jpg" class="card-img-top" alt="XRP Sticker">
+      <div class="card-body">
+        <h5 class="titlecard"><strong>XRP Stickers</strong></h5>
+        </a>
+      </div>
+      <div class="card-footer">
+          <a href="https://www.etsy.com/search?q=xrp%20sticker" target="_blank" class="btn btn-primary">Buy!</a>
+        </div>
+    </div>
+    <div class="card bg-dark text-white">
+        <a href="https://www.etsy.com/search?q=xrp%20keychain" target="_blank">
+
+        <img src="https://i.imgur.com/kmii3NC.jpg?1" class="card-img-top" alt="XRP Keychain">
+        <div class="card-body">
+          <h5 class="titlecard"><strong>XRP Keychains</strong></h5>
+          </a>
+        </div>
+        <div class="card-footer">
+            <a href="https://www.etsy.com/search?q=xrp%20keychain" target="_blank" class="btn btn-primary">Buy!</a>
+          </div>
+      </div>
+  </div>
+
+<br>
+
+  <div class="card-deck">
+    <div class="card bg-dark text-white">
+        <a href="https://www.etsy.com/search?q=xrp%20water%20bottle" target="_blank">
+
+      <img src="https://i.imgur.com/X9zmG3M.jpg?1" class="card-img-top" alt="XRP Water Bottle">
+      <div class="card-body">
+        <h5 class="titlecard"><strong>XRP Water Bottles</strong></h5>
+        </a>
+      </div>
+      <div class="card-footer">
+          <a href="https://www.etsy.com/search?q=xrp%20water%20bottle" target="_blank" class="btn btn-primary">Buy!</a>          </div>
+    </div>
+    <div class="card bg-dark text-white">
+        <a href="https://www.etsy.com/search?q=xrp%20visor" target="_blank">
+
+      <img src="https://i.imgur.com/iZH5j89.jpg?1" class="card-img-top" alt="XRP Visor">
+      <div class="card-body">
+        <h5 class="titlecard"><strong>XRP Visors</strong></h5>
+        </a>
+      </div>
+      <div class="card-footer">
+          <a href="https://www.etsy.com/search?q=xrp%20visor" target="_blank" class="btn btn-primary">Buy!</a>
+        </div>
+    </div>
+    <div class="card bg-dark text-white">
+        <a href="https://www.etsy.com/search?q=xrp%20sweatshirt" target="_blank">
+
+      <img src="https://i.imgur.com/8UAtCgy.jpg?1" class="card-img-top" alt="XRP Sweatshirt">
+      <div class="card-body">
+        <h5 class="titlecard"><strong>XRP Sweatshirts</strong></h5>
+        </a>
+      </div>
+      <div class="card-footer">
+          <a href="https://www.etsy.com/search?q=xrp%20sweatshirt" target="_blank" class="btn btn-primary">Buy!</a>
+        </div>
+    </div>
+    <div class="card bg-dark text-white">
+        <a href="https://www.etsy.com/search?q=xrp%20t-shirt" target="_blank">
+
+        <img src="https://i.imgur.com/2M4UVEq.jpg" class="card-img-top" alt="XRP T-Shirt">
+        <div class="card-body">
+          <h5 class="titlecard"><strong>XRP T-Shirts</strong></h5>
+          </a>
+        </div>
+        <div class="card-footer">
+            <a href="https://www.etsy.com/search?q=xrp%20t-shirt" target="_blank" class="btn btn-primary">Buy!</a>
+          </div>
+      </div>
+  </div>
+
+
+  </div>
+
+
+
+
+
+   
+
+
+  <div id="Donate" class="w3-container city w3-animate-bottom" style="display:none">
+    <h2 class="titleog">Donate</h2>
+    <p class="results">If you like this website, please consider donating to my XRP address.</p> 
+    <p class="resultsbasic">My XRP Address: rJtErhJbEt8A9i8pr6c6bEvH9zUj6bpV3T</p>
+    <img src="https://i.imgur.com/lCJVhEr.png" title="source: imgur.com" />
+  </div>
+
+ 
+
+</div>
+
+<script>
+function openLink(evt, animName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
+  }
+  document.getElementById(animName).style.display = "block";
+  evt.currentTarget.className += " w3-blue";
+}
+
+
+window.onload = setInterval(XRPtoUSD, 1000);
+  
+
+function refreshXRPtoUSD() {
+  setInterval(function(){ clickXRPtoUSD(); }, 300);
+}
+
+
+function refreshUSDtoXRP() {
+  setInterval(function(){ clickUSDtoXRP(); }, 300);
+}
+
+function refreshProfit() {
+  setInterval(function(){ clickProfit(); }, 300);
+}
+
+function refreshIf() {
+  setInterval(function(){ clickIf(); }, 300);
+}
+
+
+
+
+
+
+</script>
+
+<script type="text/javascript">
+  document.getElementById("profitXRPinput").value = getSavedValue("profitXRPinput");    // set the value to this input
+  document.getElementById("averageXRPinput").value = getSavedValue("averageXRPinput");   // set the value to this input
+  document.getElementById("XRPinput").value = getSavedValue("XRPinput");
+  document.getElementById("USDinput").value = getSavedValue("USDinput");
+  document.getElementById("ifXRPinput").value = getSavedValue("ifXRPinput");
+  document.getElementById("ifaverageXRPinput").value = getSavedValue("ifaverageXRPinput");
+  document.getElementById("ifXRPpricewas").value = getSavedValue("ifXRPpricewas");
+
+  /* Here you can add more inputs to set value. if it's saved */
+
+  //Save the value function - save it to localStorage as (ID, VALUE)
+  function saveValue(e){
+      var id = e.id;  // get the sender's id to save it . 
+      var val = e.value; // get the value. 
+      localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+  }
+
+  //get the saved value function - return the value of "v" from localStorage. 
+  function getSavedValue  (v){
+      if (!localStorage.getItem(v)) {
+          return "";// You can change this to your defualt value. 
+      }
+      return localStorage.getItem(v);
+  }
+</script>
+
+
+</body>
+
+
+
+
+
+  
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+</body>
+</html> 
+
+</body>
+</html>
